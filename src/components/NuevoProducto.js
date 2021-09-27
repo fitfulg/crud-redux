@@ -3,11 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 //actions de redux
 import { crearNuevoProductoAction } from "../actions/productoActions";
 
-export const NuevoProducto = () => {
+export const NuevoProducto = ({ history }) => {
   const [nombre, setNombre] = useState("");
   const [precio, setPrecio] = useState(0);
 
   const dispatch = useDispatch();
+
+  // acceder al state del store
+  const cargando = useSelector((state) => state.productos.loading);
+  const error = useSelector((state) => state.productos.error);
+  // const alerta = useSelector((state) => state.alerta.alerta);
 
   //llamar al action de productoAction
   const agregarProducto = (producto) =>
@@ -25,6 +30,9 @@ export const NuevoProducto = () => {
       nombre,
       precio,
     });
+
+    // redireccionar al home
+    history.push("/");
   };
 
   return (
@@ -66,6 +74,12 @@ export const NuevoProducto = () => {
                 </button>
               </div>
             </form>
+            {cargando ? <p>Cargando...</p> : null}
+            {error ? (
+              <p className="alert alert-danger p2 mt-4 text-center">
+                Hubo un error
+              </p>
+            ) : null}
           </div>
         </div>
       </div>
