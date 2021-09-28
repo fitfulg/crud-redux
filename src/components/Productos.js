@@ -10,6 +10,7 @@ export const Productos = () => {
     // consultar la api
     const cargarProductos = () => dispatch(obtenerProductosAction());
     cargarProductos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Obtener el state

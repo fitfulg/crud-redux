@@ -2,12 +2,12 @@
   "productos": [
     {
       "nombre": "Rib Eye 800g",
-      "precio": "200",
+      "precio": "201",
       "id": 4
     },
     {
       "nombre": "Jugo de Fresa",
-      "precio": "200",
+      "precio": "2001",
       "id": 5
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "nombre": "zumo de piña",
-      "precio": 3,
+      "precio": "30",
       "id": 8
     }
   ]
